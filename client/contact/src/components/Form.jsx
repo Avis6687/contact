@@ -44,90 +44,82 @@ const Form = () => {
 
   return (
     <div>
-      <h4>Got a question?we'd love to hear from you.</h4>
+      <h4>Got a question? we'd love to hear from you.</h4>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <input
-            placeholder="First Name"
-            {...register("first_name", {
-              required: "First name is required",
-              minLength: {
-                value: 2,
-                message: "First name must be at least 2 characters long",
-              },
-              maxLength: {
-                value: 50,
-                message: "First name must be no more than 50 characters long",
-              },
-            })}
-          />
-          {errors.firstname && <p>{errors.first_name.message}</p>}
-        </div>
+      <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
+        <input
+          placeholder="First Name"
+          {...register("first_name", {
+            required: "First name is required",
+            minLength: {
+              value: 2,
+              message: "First name must be at least 2 characters long",
+            },
+            maxLength: {
+              value: 50,
+              message: "First name must be no more than 50 characters long",
+            },
+          })}
+        />
+        {errors.first_name && <p>{errors.first_name.message}</p>}
 
-        <div>
-          <input
-            placeholder="Last Name"
-            {...register("last_name", {
-              required: "Last name is required",
-              minLength: {
-                value: 2,
-                message: "Last name must be at least 2 characters long",
-              },
-              maxLength: {
-                value: 50,
-                message: "Last name must be no more than 50 characters long",
-              },
-            })}
-          />
-          {errors.lastname && <p>{errors.last_name.message}</p>}
-        </div>
+        <input
+          placeholder="Last Name"
+          {...register("last_name", {
+            required: "Last name is required",
+            minLength: {
+              value: 2,
+              message: "Last name must be at least 2 characters long",
+            },
+            maxLength: {
+              value: 50,
+              message: "Last name must be no more than 50 characters long",
+            },
+          })}
+        />
+        {errors.last_name && <p>{errors.last_name.message}</p>}
 
-        <div>
-          <input
-            placeholder="Email Address"
-            type="email"
-            {...register("user_email", {
-              required: "Email is required",
-              pattern: {
-                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                message: "Invalid email address",
-              },
-            })}
-          />
-          {errors.email && <p>{errors.User_email.message}</p>}
-        </div>
+        <input
+          placeholder="Email Address"
+          type="email"
+          {...register("user_email", {
+            required: "Email is required",
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: "Invalid email address",
+            },
+          })}
+        />
+        {errors.user_email && <p>{errors.ser_email.message}</p>}
 
-        <div>
-          <input
-            placeholder="Phone Number"
-            type="tel"
-            {...register("phone_no", {
-              required: "Phone number is required",
-              pattern: {
-                value: /^[0-9]{10}$/,
-                message: "Phone number must be exactly 10 digits",
-              },
-            })}
-          />
-          {errors.phone && <p>{errors.phone.message}</p>}
-        </div>
+        <input
+          placeholder="Phone Number"
+          type="tel"
+          {...register("phone_no", {
+            required: "Phone number is required",
+            pattern: {
+              value: /^[0-9]{10}$/,
+              message: "Phone number must be exactly 10 digits",
+            },
+          })}
+        />
+        {errors.phone_no && <p>{errors.phone_no.message}</p>}
 
-        <div>
-          <textarea
-            id="note"
-            placeholder="Information"
-            {...register("note", {
-              maxLength: {
-                value: 500,
-                message: "Note must be no more than 500 characters long",
-              },
-            })}
-          />
-          {errors.note && <p>{errors.note.message}</p>}
-        </div>
+        <textarea
+          id="note"
+          placeholder="Information"
+          {...register("note", {
+            maxLength: {
+              value: 500,
+              message: "Note must be no more than 500 characters long",
+            },
+          })}
+        />
+        {errors.note && <p>{errors.note.message}</p>}
 
-        <button type="submit">Submit</button>
+        <button className="submit-button" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );

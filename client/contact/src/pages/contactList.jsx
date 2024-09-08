@@ -5,7 +5,7 @@ import { useEffect } from "react";
 const contactList = () => {
   return (
     <div>
-      <h1>Contact list</h1>
+      <h2>Contact list</h2>
       <ContactList />
     </div>
   );
