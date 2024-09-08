@@ -29,6 +29,7 @@ const Form = () => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
       } else {
+        console.log("you should navigate to next");
         navigate("/ThankYou");
         //Redirecting to Thank you Page
       }
@@ -90,7 +91,7 @@ const Form = () => {
             },
           })}
         />
-        {errors.user_email && <p>{errors.ser_email.message}</p>}
+        {errors.user_email && <p>{errors.user_email.message}</p>}
 
         <input
           placeholder="Phone Number"
