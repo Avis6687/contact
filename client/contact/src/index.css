@@ -1,6 +1,4 @@
-/* ContactUs.css */
-
-.contact-us {
+ContactUs.css .contact-us {
   display: flex;
   flex-direction: column;
   padding: 20px;

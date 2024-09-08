@@ -8,10 +8,9 @@ const Form = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting, isSubmitSuccessful },
+    reset,
   } = useForm();
-
-  // uploading the data  on the database
 
   const onSubmit = async (data) => {
     try {
@@ -27,25 +26,24 @@ const Form = () => {
       );
 
       if (!response.ok) {
-        throw new Error("Network response was not ok");
-      } else {
-        console.log("you should navigate to next");
-        navigate("/ThankYou");
-        //Redirecting to Thank you Page
+        throw new Error("Failed to submit the form. Please try again later.");
       }
 
       const result = await response.json();
       console.log("Form submitted successfully:", result);
-      // Handle successful submission
+
+      // Reset form on successful submission
+      reset();
+      // Redirect to Thank You page
+      navigate("/ThankYouPage");
     } catch (error) {
       console.error("Error submitting form:", error);
-      // Handle submission error
     }
   };
 
   return (
     <div>
-      <h4>Got a question? we'd love to hear from you.</h4>
+      <h4>Got a question? We'd love to hear from you.</h4>
 
       <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
         <input
@@ -62,7 +60,9 @@ const Form = () => {
             },
           })}
         />
-        {errors.first_name && <p>{errors.first_name.message}</p>}
+        {errors.first_name && (
+          <p className="error">{errors.first_name.message}</p>
+        )}
 
         <input
           placeholder="Last Name"
@@ -78,7 +78,9 @@ const Form = () => {
             },
           })}
         />
-        {errors.last_name && <p>{errors.last_name.message}</p>}
+        {errors.last_name && (
+          <p className="error">{errors.last_name.message}</p>
+        )}
 
         <input
           placeholder="Email Address"
@@ -91,7 +93,9 @@ const Form = () => {
             },
           })}
         />
-        {errors.user_email && <p>{errors.user_email.message}</p>}
+        {errors.user_email && (
+          <p className="error">{errors.user_email.message}</p>
+        )}
 
         <input
           placeholder="Phone Number"
@@ -104,10 +108,9 @@ const Form = () => {
             },
           })}
         />
-        {errors.phone_no && <p>{errors.phone_no.message}</p>}
+        {errors.phone_no && <p className="error">{errors.phone_no.message}</p>}
 
         <textarea
-          id="note"
           placeholder="Information"
           {...register("note", {
             maxLength: {
@@ -116,10 +119,13 @@ const Form = () => {
             },
           })}
         />
-        {errors.note && <p>{errors.note.message}</p>}
+        {errors.note && <p className="error">{errors.note.message}</p>}
 
-        <button className="submit-button" type="submit">
-          Submit
+        <button
+          className="submit-button"
+          type="submit"
+          disabled={isSubmitting || isSubmitSuccessful}>
+          {isSubmitting ? "Submitting..." : "Submit"}
         </button>
       </form>
     </div>

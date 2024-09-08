@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ThankYou = () => {
+const ThankYouPage = () => {
   return (
     <div className="thank-you-container">
       <h2>Thank you for Contacting Open Agent</h2>
@@ -13,4 +13,4 @@ const ThankYou = () => {
   );
 };
 
-export default ThankYou;
+export default ThankYouPage;
