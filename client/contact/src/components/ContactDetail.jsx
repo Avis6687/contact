@@ -5,11 +5,11 @@ const ContactDetails = () => {
   return (
     <div className="contact-us">
       <div className="contact-info">
-        <h2>Welcome to OpenAgent</h2>
-        <h3>
+        <h1>Welcome to OpenAgent</h1>
+        <h2>
           We’ve been around since 2013, making it easy for people to buy, sell,
           and own property.
-        </h3>
+        </h2>
         <h3>Here are the different ways you can contact us:</h3>
         <div className="contact-detail-container">
           <div className="contact-details">
