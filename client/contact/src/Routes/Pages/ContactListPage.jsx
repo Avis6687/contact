@@ -7,7 +7,7 @@ const ContactListPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="contact-list">
       <h2>Contact List</h2>
       <ContactList />
     </div>
