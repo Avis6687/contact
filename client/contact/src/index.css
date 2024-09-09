@@ -66,7 +66,8 @@ h2 {
   color: #34495e;
 }
 
-/* Form.css */
+/* Form Component Styling */
+
 .contact-us-page {
   padding: 20px;
   background-color: #f9f9f9;
@@ -134,9 +135,9 @@ h4 {
 }
 
 .contact-form p {
-  color: #e74c3c; /* Red color for error messages */
+  color: #e74c3c;
   font-size: 0.9em;
-  text-align: center; /* Center error messages */
+  text-align: center;
 }
 
 @media (max-width: 1000px) {
@@ -144,7 +145,8 @@ h4 {
     flex-direction: column;
   }
 }
-/* ThankYou.css */
+
+/* ThankYou page Styling */
 
 /* Container for the Thank You page */
 .thank-you-container {
@@ -156,7 +158,7 @@ h4 {
   max-width: 100%;
   height: 80vh;
   margin: auto;
-  background-color: #fff; /* White background for a clean look */
+  background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -165,20 +167,20 @@ h4 {
 /* Heading styling */
 .thank-you-container h2 {
   font-size: 1.8em;
-  color: #1eaf45; /* Vibrant red color for heading */
+  color: #1eaf45;
   margin-bottom: 15px;
 }
 
 /* Paragraph styling */
 .thank-you-container p {
   font-size: 1.2em;
-  color: #2c3e50; /* Dark grey color for text */
+  color: #2c3e50;
   margin-bottom: 25px;
 }
 
 /* Button styling */
 .back-button {
-  background-color: #3498db; /* Bright blue background for button */
+  background-color: #3498db;
   border: none;
   padding: 12px 24px;
   font-size: 1.1em;
@@ -196,15 +198,15 @@ h4 {
 
 /* Button hover effect */
 .back-button:hover {
-  background-color: #2980b9; /* Darker blue on hover */
-  transform: scale(1.05); /* Slightly enlarge button on hover */
+  background-color: #2980b9;
+  transform: scale(1.05);
 }
 
 /* Link styling inside the button */
 .link-text {
-  text-decoration: none; /* Remove underline from the link */
-  color: white; /* Ensure link text color is white */
-  display: inline-block; /* Ensure link behaves like a block element */
+  text-decoration: none;
+  color: white;
+  display: inline-block;
 }
 
 /* Responsive Styles for tablets and smaller screens */
@@ -215,16 +217,16 @@ h4 {
   }
 
   .thank-you-container h2 {
-    font-size: 1.5em; /* Adjust heading size for smaller screens */
+    font-size: 1.5em;
   }
 
   .thank-you-container p {
-    font-size: 1em; /* Adjust paragraph size for smaller screens */
+    font-size: 1em;
   }
 
   .back-button {
     padding: 10px 20px;
-    font-size: 1em; /* Adjust button size for smaller screens */
+    font-size: 1em;
   }
 }
 
@@ -235,27 +237,27 @@ h4 {
   }
 
   .thank-you-container h2 {
-    font-size: 1.3em; /* Further adjust heading size for very small screens */
+    font-size: 1.3em;
   }
 
   .thank-you-container p {
-    font-size: 0.9em; /* Further adjust paragraph size for very small screens */
+    font-size: 0.9em;
   }
 
   .back-button {
     padding: 8px 16px;
-    font-size: 0.9em; /* Further adjust button size for very small screens */
+    font-size: 0.9em;
   }
 }
 
-/* ContactList.css */
+/* ContactList Component Styling */
 
 /* Container for the contact list */
 .contact-list-container {
   display: flex;
   justify-content: center;
   padding: 20px;
-  background-color: #f9f9f9; /* Light background for contrast */
+  background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -264,34 +266,34 @@ h4 {
 .contact-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #fff; /* White background for the table */
+  background-color: #fff;
   border-radius: 8px;
-  overflow: hidden; /* Ensure borders and radius are applied */
+  overflow: hidden;
 }
 
 .contact-table th,
 .contact-table td {
   padding: 12px;
   text-align: left;
-  border-bottom: 1px solid #ddd; /* Light border for rows */
+  border-bottom: 1px solid #ddd;
 }
 
 .contact-table th {
-  background-color: #3498db; /* Blue background for header */
+  background-color: #3498db;
   color: white;
 }
 
 .contact-table tr:nth-child(even) {
-  background-color: #f2f2f2; /* Alternating row colors */
+  background-color: #f2f2f2;
 }
 
 .contact-table tr:hover {
-  background-color: #e1e1e1; /* Highlight row on hover */
+  background-color: #e1e1e1;
 }
 
 /* Button styling */
 .verify-button {
-  background-color: #2ecc71; /* Green background for verify button */
+  background-color: #2ecc71;
   border: none;
   padding: 8px 16px;
   font-size: 0.9em;
@@ -340,7 +342,8 @@ h4 {
     font-size: 0.8em;
   }
 }
-/* Header.css */
+
+/* Header. Component Styling */
 
 /* General styles for the header */
 .container {
@@ -426,26 +429,26 @@ li a:hover {
   }
 }
 
-/* Footer.css */
+/* Footer Component Styling */
 
 /* General footer styles */
 .footer {
-  background-color: #f1f1f1; /* Light gray background */
+  background-color: #f1f1f1;
   padding: 10px;
   text-align: center;
-  border-top: 1px solid #ccc; /* Light border at the top */
+  border-top: 1px solid #ccc;
   display: flex;
   flex-direction: column-reverse;
   position: fixed;
   align-items: center;
-  gap: 10px; /* Space between items */
-  bottom: 0; /* Ensure it stays at the bottom */
-  width: 100%; /* Full width of the viewport */
+  gap: 10px;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer p {
   margin: 0;
-  color: #333; /* Dark gray text color */
+  color: #333;
   font-size: 14px;
 }
 
@@ -469,12 +472,12 @@ li a:hover {
 /* Responsive styles */
 @media (max-width: 768px) {
   .footer {
-    padding: 20px; /* Increase padding on small screens */
+    padding: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .footer p {
-    font-size: 12px; /* Smaller font size on very small screens */
+    font-size: 12px;
   }
 }
