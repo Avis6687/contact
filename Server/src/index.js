@@ -23,8 +23,8 @@ const main = async () => {
 
   app.use(contact);
 
-  app.listen(process.env.DB_PORT, () => {
-    console.log(`listening at port ${process.env.DB_PORT}`);
+  app.listen(process.env.APP_PORT, () => {
+    console.log(`listening at port ${process.env.APP_PORT}`);
   });
 };
 main();

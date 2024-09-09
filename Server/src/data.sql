@@ -1,4 +1,4 @@
- CREATE DATABASE contact;
+CREATE DATABASE contact;
 
 
 CREATE Table clientInfo(

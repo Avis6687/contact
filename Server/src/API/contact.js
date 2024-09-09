@@ -8,7 +8,7 @@ const contactRouter = express.Router();
 
 contactRouter.get("/contact", async (req, res) => {
   try {
-    const contact = await pool.query("SELECT * FROM clientinfo");
+    const contact = await pool.query("SELECT * FROM clientInfo");
     res.status(200).json({ success: true, data: contact.rows });
   } catch (err) {
     console.error(err);
@@ -24,7 +24,7 @@ contactRouter.post("/contact", async (req, res) => {
   const is_verified = false;
   try {
     const newContactList = await pool.query(
-      `INSERT INTO clientinfo(id, user_email, first_name, last_name, phone_no, note, is_verified) 
+      `INSERT INTO clientInfo(id, user_email, first_name, last_name, phone_no, note, is_verified) 
             VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING *`,
       [id, user_email, first_name, last_name, phone_no, note, is_verified]
     );
@@ -42,7 +42,7 @@ contactRouter.delete("/contact/:id", async (req, res) => {
 
   try {
     const deleteContactList = await pool.query(
-      "DELETE FROM clientinfo WHERE id=$1",
+      "DELETE FROM clientInfo WHERE id=$1",
       [id]
     );
     res
@@ -63,7 +63,7 @@ contactRouter.put("/contact/verify/:id", async (req, res) => {
   const is_verified = true;
   try {
     const editContactList = await pool.query(
-      `UPDATE clientinfo SET is_verified=$1 WHERE id =$2 RETURNING *`,
+      `UPDATE clientInfo SET is_verified=$1 WHERE id =$2 RETURNING *`,
       [is_verified, id]
     );
     res.status(200).json({ success: true, data: editContactList.rows });
