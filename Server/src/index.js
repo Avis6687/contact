@@ -1,6 +1,9 @@
 import express from "express";
 import { contact } from "./API/contact.js";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const main = async () => {
   const app = express();
@@ -8,8 +11,6 @@ const main = async () => {
     console.log(req.url);
     next();
   });
-  const port = 8080;
-  console.log("hi world");
 
   app.use(cors());
   app.use(
@@ -22,8 +23,8 @@ const main = async () => {
 
   app.use(contact);
 
-  app.listen(port, () => {
-    console.log(`listening at port ${port}`);
+  app.listen(process.env.DB_PORT, () => {
+    console.log(`listening at port ${process.env.DB_PORT}`);
   });
 };
 main();
